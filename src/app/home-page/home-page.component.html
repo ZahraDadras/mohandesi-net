@@ -1,0 +1,97 @@
+<div class="containe">
+    <div class="header">
+
+        <ul class="left-header">
+            <li>
+                <span class="test1">کالای دیجیتال
+                    <ul class="hide">
+                        <li>موبایل</li>
+                        <li>تبلت</li>
+                    </ul>
+                </span>
+
+
+            </li>
+            <li>آرایشی و بهداشتی</li>
+            <li>مد و پوشاک</li>
+            <li>خانه و آشپزخانه</li>
+            <li>ابزار اداری</li>
+            <li>اسباب بازی</li>
+            <li>اخبار</li>
+        </ul>
+        <ul class="right-header">
+            <li  (click)="shopping()"><span class="material-icons-outlined">
+                    shopping_cart
+                </span> سبد انتقال کالا</li>
+                <li (click)="createItem()">ثبت آگهی</li>
+        </ul>
+
+    </div>
+    <div class="body">
+        <div class="mobile">
+            <div class="text">موبایل</div>
+            <div class="test">
+                <div class="photoGraphy-card" *ngFor="let item of photoGraphyCards" (click)="detailPage(item)">
+                    <img src="./assets/images/photo.webp" alt="" class="image-card">
+                    <div class="center-item">{{item.name}}<br>
+                        {{item.price}}<br>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="tablet">
+            <div class="text">تبلت</div>
+            <div class="test">
+                <div class="photoGraphy-card" *ngFor="let item of tabletCards" (click)="detailPage(item)">
+                    <img src="./assets/images/photo.webp" alt="" class="image-card">
+                    <div class="center-item">{{item.name}}<br>
+                        {{item.price}}<br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="footer-left">
+            <div style="display: flex; align-items: center; "><span class="material-icons-outlined">
+                    done
+                </span>تضمین اصالت کالاهای فروخته شده</div>
+            <div style="display: flex; align-items: center; "><span class="material-icons-outlined">
+                    done
+                </span>فروش برند های معتبر</div>
+            <div style="display: flex; align-items: center; "><span class="material-icons-outlined">
+                    done
+                </span>پاسخگویی 24 ساعته</div>
+            <div style="display: flex; align-items: center; "><span class="material-icons-outlined">
+                    done
+                </span>امکان پرداخت آنلاین با کارت بانکی و پرداخت در محل</div>
+            <div style="display: flex; align-items: center; "><span class="material-icons-outlined">
+                    done
+                </span>مکان بازگشت تا یک هفته در صورت عدم رضایت مشتری</div>
+            <div style="display: flex; align-items: center; "><span class="material-icons-outlined">
+                    done
+                </span>خرید آسان و مطمئن</div>
+            
+           
+        </div>
+
+        <div class="footer-right">
+            <div style="display: flex; align-items: center; "><span class="material-icons-outlined">
+                done
+            </span>قیمت های مناسب</div>
+            <div style="display: flex; align-items: center; "><span class="material-icons-outlined">
+                done
+            </span>تحویل پستی سریع</div>
+            <div style="display: flex; align-items: center; "><span class="material-icons-outlined">
+                done
+            </span>ارسال با پست پیشتاز و سفارشی</div>
+            <div style="display: flex; align-items: center; "><span class="material-icons-outlined">
+                done
+            </span>خرید آسان و راحت</div>
+        </div>
+    </div>
+</div>

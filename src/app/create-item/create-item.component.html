@@ -1,0 +1,74 @@
+<form [formGroup]="detailForm">
+    <div class="container">
+        <h3>ثبت آگهی</h3>
+        <div class="content">
+            <div class="left">
+                <label for="type">نوع محصول:</label>
+                <ng-select [items]="['موبایل','تبلت']" formControlName="category" placeholder="انتخاب کتید"
+                    style="width: 100%;" id="type" (change)="changeType($event)">
+                </ng-select>
+            </div>
+            <div class="right">
+                <div class="section" *ngIf="mobileMood || tabletMood">
+                    <label for="name"> مدل: </label> <br>
+                    <input id="name" type="text" formControlName="name" placeholder="نام مدل" class="input">
+                </div>
+                <div class="section" *ngIf="mobileMood">
+                    <label for="brand">برند: </label> <br>
+                    <input id="brand" type="text" formControlName="brand" placeholder="نام برند" class="input">
+                </div>
+                <div class="section" *ngIf="mobileMood">
+                    <label for="simCount">تعداد سیم کارت</label>
+                    <ng-select [items]="['1','2', '3 و یا بیشتر']" formControlName="simCount" placeholder="انتخاب کتید"
+                        style="width: 100%;" id="sinCount">
+                    </ng-select>
+                </div>
+                <div class="section" *ngIf="tabletMood">
+                    <label for="OS">سیستم عامل:</label> <br>
+                    <ng-select [items]="['Android','Windows', 'ios-iPadOS', 'سایر']" formControlName="operationSystem"
+                        placeholder="انتخاب کتید" style="width: 100%;" id="OS">
+                    </ng-select>
+                </div>
+                <div class="section" *ngIf="tabletMood">
+                    <label for="pageSize">اندازه ی صفحه:</label>
+                    <ng-select [items]="['7 اینچ و کوچکتر','8 تا 10 اینچ', '11 تا 13 اینچ','بزرگتر از 13 اینچ']"
+                        formControlName="pageSize" placeholder="انتخاب کتید" style="width: 100%;" id="pageSize">
+                    </ng-select>
+                </div>
+                <div class="section" *ngIf="mobileMood || tabletMood">
+                    <label for="hafeze">حافظه ی داخلی: </label> <br>
+                    <input id="hafeze" type="text" formControlName="hafezeDakheli" placeholder="مقدار حافظه ی داخلی"
+                        class="input">
+                </div>
+                <div class="section" *ngIf="mobileMood || tabletMood">
+                    <label for="RAM">رم: </label> <br>
+                    <input id="RAM" type="text" formControlName="RAM" placeholder="مقدار رم:" class="input">
+                </div>
+                <div class="section" *ngIf="mobileMood || tabletMood">
+                    <label for="price">قیمت: </label> <br>
+                    <input id="price" type="text" formControlName="price" placeholder="قیمت به تومان:" class="input">
+                </div>
+                <div class="section" *ngIf="mobileMood || tabletMood">
+                    <label for="status">وضعیت: </label> <br>
+                    <ng-select [items]="['موجود در انبار','عدم موجود در انباز']" formControlName="status"
+                        placeholder="انتخاب کتید" style="width: 100%;" id="status">
+                    </ng-select>
+                </div>
+                <div class="section" *ngIf="mobileMood || tabletMood">
+                    <label for="colors">رنگ ها: </label> <br>
+                    <ng-select [items]="['مشکی','قرمز', 'خاکستری','سفید']" formControlName="color"
+                        placeholder="انتخاب کتید" style="width: 100%;" id="colors">
+                    </ng-select>
+                </div>
+            </div>
+            <!-- <div class="upload-img" *ngIf="mobileMood || tabletMood">
+                <div>افزودن عکس</div>
+            </div> -->
+        </div>
+        <div class="footer"  *ngIf="mobileMood || tabletMood">
+            <button class="add" (click)="addItem()">ثبت آگهی</button>
+        </div>
+
+
+    </div>
+</form>

@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="header">
+
+        <ul class="left-header">
+            <li>
+                <span class="test1">کالای دیجیتال
+                    <ul class="hide">
+                        <li>موبایل</li>
+                        <li>تبلت</li>
+                    </ul>
+                </span>
+
+
+            </li>
+            <li>آرایشی و بهداشتی</li>
+            <li>مد و پوشاک</li>
+            <li>خانه و آشپزخانه</li>
+            <li>ابزار اداری</li>
+            <li>اسباب بازی</li>
+            <li>اخبار</li>
+        </ul>
+        <ul class="right-header">
+            <li (click)="shopping()"><span class="material-icons-outlined">
+                    shopping_cart
+                </span> سبد انتقال کالا</li>
+                <li (click)="createItem()">ثبت آگهی</li>
+        </ul>
+
+    </div>
+    <div class="item">
+        <div class="detail">
+            <div class="detail-header">
+                <div>{{tabletCards[0].name}}</div>
+                <!-- <div>تبلت هوآوی 10 اینچ فورجی</div> -->
+            </div>
+            <div class="detail-body">
+                <div class="left">
+                    <div>برند: {{tabletCards[0].brand}}</div>
+                    <div>دسته بندی: {{tabletCards[0].category}}</div>
+                    <div>حافظه ی داخلی: {{tabletCards[0].hafezeDakheli}}</div>
+                    <div>حافظه ی رم: {{tabletCards[0].RAM}}</div>
+                </div>
+                <div class="right">
+                    <div>وضعیت: {{tabletCards[0].status}}</div>
+                    <div>رنگ: {{tabletCards[0].color}}</div>
+                    <div *ngIf="tabletMood">سیستم عامل: {{tabletCards[0].operationSystem}}</div>
+                    <div *ngIf="tabletMood">اندازه ی صفحه:{{tabletCards[0].pageSize}}</div>
+                    <div *ngIf="mobileMooed">تعداد سیم کارت: {{tabletCards[0].simCount}}</div>
+                    
+                </div>
+            </div>
+            <div class="detail-footer">
+                <div>{{tabletCards[0].price}}</div>
+                <button class="shopping" (click)="addToShop()">  <span class="material-icons-outlined">
+                    shopping_cart
+                </span>خرید انلاین </button>
+            </div>
+        </div>
+        <div class="image"> <img src="./assets/images/photo.webp" alt="" class="image-card">
+            <div class="select-image"> <img src="./assets/images/photo.webp" alt="" class="select-image-card"> <img
+                    src="./assets/images/photo.webp" alt="" class="select-image-card"> <img src="./assets/images/photo.webp"
+                    alt="" class="select-image-card"> <img src="./assets/images/photo.webp" alt="" class="select-image-card"></div>
+        </div>
+       
+    </div>
+</div>
